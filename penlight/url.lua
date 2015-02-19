@@ -2,6 +2,8 @@
 --
 -- @module pl.url
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local M = {}
 
 --- Quote the url.

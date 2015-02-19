@@ -1,6 +1,6 @@
 --- A Set class.
 --
---     > Set = require 'pl.Set'
+--     > Set = brequire 'Set'
 --     > = Set{'one','two'} == Set{'two','one'}
 --     true
 --     > fruit = Set{'apple','banana','orange'}
@@ -19,12 +19,14 @@
 -- Depdencies: `pl.utils`, `pl.tablex`, `pl.class`, (`pl.List` if __tostring is used)
 -- @classmod pl.Set
 
-local tablex = require 'pl.tablex'
-local utils = require 'pl.utils'
+local _M, crequire, brequire = require("newmodule")(...)
+
+local tablex = brequire 'tablex'
+local utils = brequire 'utils'
 local array_tostring, concat = utils.array_tostring, table.concat
 local tmakeset,deepcompare,merge,keys,difference,tupdate = tablex.makeset,tablex.deepcompare,tablex.merge,tablex.keys,tablex.difference,tablex.update
-local Map = require 'pl.Map'
-local class = require 'pl.class'
+local Map = brequire 'Map'
+local class = brequire 'class'
 local stdmt = utils.stdmt
 local Set = stdmt.Set
 

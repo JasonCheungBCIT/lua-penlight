@@ -17,12 +17,15 @@
 --
 -- Dependencies: `pl.utils`, `pl.tablex`
 -- @module pl.func
+
+local _M, crequire, brequire = require("newmodule")(...)
+
 local type,select,setmetatable,getmetatable,rawset = type,select,setmetatable,getmetatable,rawset
 local concat,append = table.concat,table.insert
 local tostring = tostring
-local utils = require 'pl.utils'
+local utils = brequire 'utils'
 local pairs,ipairs,loadstring,rawget,unpack  = pairs,ipairs,loadstring,rawget,utils.unpack
-local tablex = require 'pl.tablex'
+local tablex = brequire 'tablex'
 local map = tablex.map
 local _DEBUG = rawget(_G,'_DEBUG')
 local assert_arg = utils.assert_arg

@@ -19,6 +19,8 @@
 --
 -- @module pl.sip
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local loadstring = rawget(_G,'loadstring') or load
 local unpack = rawget(_G,'unpack') or rawget(table,'unpack')
 

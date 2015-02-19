@@ -6,6 +6,11 @@
 -- the global space.
 --Updated to use @{pl.import_into}
 -- @module pl
-require'pl.import_into'(_G)
 
-if rawget(_G,'PENLIGHT_STRICT') then require 'pl.strict' end
+local _M, crequire, brequire = require("newmodule")(...)
+
+crequire'import_into'(_G)
+
+if rawget(_G,'PENLIGHT_STRICT') then brequire 'strict' end
+
+return _M

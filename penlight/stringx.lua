@@ -8,7 +8,10 @@
 --
 -- Dependencies: `pl.utils`
 -- @module pl.stringx
-local utils = require 'pl.utils'
+
+local _M, crequire, brequire = require("newmodule")(...)
+
+local utils = brequire 'utils'
 local string = string
 local find = string.find
 local type,setmetatable,getmetatable,ipairs,unpack = type,setmetatable,getmetatable,ipairs,utils.unpack

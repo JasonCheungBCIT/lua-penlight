@@ -2,8 +2,11 @@
 --
 -- Dependencies: `pl.utils`, `pl.tablex`
 -- @module pl.permute
-local tablex = require 'pl.tablex'
-local utils = require 'pl.utils'
+
+local _M, crequire, brequire = require("newmodule")(...)
+
+local tablex = brequire 'tablex'
+local utils = brequire 'utils'
 local copy = tablex.deepcopy
 local append = table.insert
 local coroutine = coroutine

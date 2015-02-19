@@ -5,10 +5,12 @@
 -- Dependencies: `pl.utils`, `pl.lexer`
 -- @module pl.pretty
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local append = table.insert
 local concat = table.concat
-local utils = require 'pl.utils'
-local lexer = require 'pl.lexer'
+local utils = brequire 'utils'
+local lexer = brequire 'lexer'
 local assert_arg = utils.assert_arg
 
 local pretty = {}

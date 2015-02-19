@@ -20,6 +20,8 @@
 -- See the Guide for further @{06-data.md.Lexical_Scanning|discussion}
 -- @module pl.lexer
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local yield,wrap = coroutine.yield,coroutine.wrap
 local strfind = string.find
 local strsub = string.sub

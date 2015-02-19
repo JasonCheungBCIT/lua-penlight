@@ -9,17 +9,19 @@
 -- Dependencies: `pl.utils`, `pl.class`, `pl.tablex`, `pl.pretty`
 -- @classmod pl.Map
 
-local tablex = require 'pl.tablex'
-local utils = require 'pl.utils'
+local _M, crequire, brequire = require("newmodule")(...)
+
+local tablex = brequire 'tablex'
+local utils = brequire 'utils'
 local stdmt = utils.stdmt
 local tmakeset,deepcompare,merge,keys,difference,tupdate = tablex.makeset,tablex.deepcompare,tablex.merge,tablex.keys,tablex.difference,tablex.update
 
-local pretty_write = require 'pl.pretty' . write
+local pretty_write = brequire 'pretty' . write
 local Map = stdmt.Map
 local Set = stdmt.Set
 local List = stdmt.List
 
-local class = require 'pl.class'
+local class = brequire 'class'
 
 -- the Map class ---------------------
 class(nil,nil,Map)

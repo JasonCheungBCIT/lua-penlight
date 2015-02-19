@@ -7,6 +7,8 @@
 -- they are not always guaranteed to work.
 -- @module pl.compat
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local compat = {}
 
 compat.lua51 = _VERSION == 'Lua 5.1'

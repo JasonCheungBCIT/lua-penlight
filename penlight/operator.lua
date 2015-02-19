@@ -11,8 +11,10 @@
 -- Dependencies: `pl.utils`
 -- @module pl.operator
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local strfind = string.find
-local utils = require 'pl.utils'
+local utils = brequire 'utils'
 
 local operator = {}
 

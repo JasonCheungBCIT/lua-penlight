@@ -5,10 +5,12 @@
 -- @classmod pl.Date
 -- @pragma nostrip
 
-local class = require 'pl.class'
+local _M, crequire, brequire = require("newmodule")(...)
+
+local class = brequire 'class'
 local os_time, os_date = os.time, os.date
-local stringx = require 'pl.stringx'
-local utils = require 'pl.utils'
+local stringx = brequire 'stringx'
+local utils = brequire 'utils'
 local assert_arg,assert_string,raise = utils.assert_arg,utils.assert_string,utils.raise
 
 local Date = class()

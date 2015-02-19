@@ -4,13 +4,15 @@
 -- Dependencies: `pl.utils`, `pl.types`, `debug`
 -- @module pl.seq
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local next,assert,type,pairs,tonumber,type,setmetatable,getmetatable,_G = next,assert,type,pairs,tonumber,type,setmetatable,getmetatable,_G
 local strfind,strmatch,format = string.find,string.match,string.format
 local mrandom = math.random
 local remove,tsort,tappend = table.remove,table.sort,table.insert
 local io = io
-local utils = require 'pl.utils'
-local callable = require 'pl.types'.is_callable
+local utils = brequire 'utils'
+local callable = brequire 'types'.is_callable
 local function_arg = utils.function_arg
 local _List = utils.stdmt.List
 local _Map = utils.stdmt.Map

@@ -3,7 +3,9 @@
 -- Dependencies `pl.utils`
 -- @module pl.types
 
-local utils = require 'pl.utils'
+local _M, crequire, brequire = require("newmodule")(...)
+
+local utils = brequire 'utils'
 local types = {}
 
 --- is the object either a function or a callable object?.

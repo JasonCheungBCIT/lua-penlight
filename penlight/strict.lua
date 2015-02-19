@@ -13,6 +13,8 @@
 --
 -- @module pl.strict
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 require 'debug' -- for Lua 5.2
 local getinfo, error, rawset, rawget = debug.getinfo, error, rawset, rawget
 local strict = {}

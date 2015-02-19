@@ -12,6 +12,8 @@
 -- See  @{03-strings.md.File_style_I_O_on_Strings|the Guide}.
 -- @module pl.stringio
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local unpack = rawget(_G,'unpack') or rawget(table,'unpack')
 local getmetatable,tostring,tonumber = getmetatable,tostring,tonumber
 local concat,append = table.concat,table.insert

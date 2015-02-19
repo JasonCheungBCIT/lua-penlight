@@ -4,9 +4,11 @@
 -- Dependencies: `pl.utils`, `pl.path`
 -- @module pl.app
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local io,package,require = _G.io, _G.package, _G.require
-local utils = require 'pl.utils'
-local path = require 'pl.path'
+local utils = brequire 'utils'
+local path = brequire 'path'
 
 local app = {}
 

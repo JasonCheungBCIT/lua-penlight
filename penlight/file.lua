@@ -3,9 +3,11 @@
 -- Dependencies: `pl.utils`, `pl.dir`, `pl.path`
 -- @module pl.file
 local os = os
-local utils = require 'pl.utils'
-local dir = require 'pl.dir'
-local path = require 'pl.path'
+local utils = brequire 'utils'
+local dir = brequire 'dir'
+local path = brequire 'path'
+
+local _M, crequire, brequire = require("newmodule")(...)
 
 --[[
 module ('pl.file',utils._module)

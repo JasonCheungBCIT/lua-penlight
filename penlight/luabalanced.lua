@@ -17,6 +17,8 @@
 -- @class module
 -- @name pl.luabalanced
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local M = {}
 
 local assert = assert

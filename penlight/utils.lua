@@ -1,8 +1,11 @@
 --- Generally useful routines.
 -- See  @{01-introduction.md.Generally_useful_functions|the Guide}.
 -- @module pl.utils
+
+local _M, crequire, brequire = require("newmodule")(...)
+
 local format,gsub,byte = string.format,string.gsub,string.byte
-local compat = require 'pl.compat'
+local compat = brequire 'compat'
 local clock = os.clock
 local stdout = io.stdout
 local append = table.insert
@@ -325,7 +328,7 @@ function utils.function_arg (idx,f,msg)
     if tp == 'function' then return f end  -- no worries!
     -- ok, a string can correspond to an operator (like '==')
     if tp == 'string' then
-        if not ops then ops = require 'pl.operator'.optable end
+        if not ops then ops = brequire 'operator'.optable end
         local fn = ops[f]
         if fn then return fn end
         local fn, err = utils.string_lambda(f)

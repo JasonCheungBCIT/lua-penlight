@@ -9,6 +9,8 @@
 -- If this is `true`, then return a 'shadow table' as the module
 -- See @{01-introduction.md.To_Inject_or_not_to_Inject_|the Guide}
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 -- @module pl.import_into
 
 return function(env)
@@ -20,21 +22,21 @@ return function(env)
 	local env = env or {}
 
 	local modules = {
-	    utils = true,path=true,dir=true,tablex=true,stringio=true,sip=true,
-	    input=true,seq=true,lexer=true,stringx=true,
-	    config=true,pretty=true,data=true,func=true,text=true,
-	    operator=true,lapp=true,array2d=true,
-	    comprehension=true,xml=true,types=true,
+	    utils = true, path=true, dir=true, tablex=true, stringio=true, sip=true,
+	    input=true, seq=true, lexer=true, stringx=true,
+	    config=true, pretty=true, data=true, func=true, text=true,
+	    operator=true, lapp=true, array2d=true,
+	    comprehension=true, xml=true, types=true,
 	    test = true, app = true, file = true, class = true, List = true,
 	    Map = true, Set = true, OrderedMap = true, MultiMap = true,
 	    Date = true,
 	    -- classes --
 	}
-	rawset(env,'utils',require 'pl.utils')
+	rawset(env, 'utils', brequire('utils'))
 
 	for name,klass in pairs(env.utils.stdmt) do
 	    klass.__index = function(t,key)
-	        return require ('pl.'..name)[key]
+	        return brequire(name)[key]
 	    end;
 	end
 
@@ -62,7 +64,7 @@ return function(env)
 	    -- either way, we load the required module and make it globally available.
 	    if found then
 	        -- e..g pretty.dump causes pl.pretty to become available as 'pretty'
-	        rawset(env,name,require('pl.'..name))
+	        rawset(env, name, brequire(name))
 	        return env[name]
 	    else
 	        local res

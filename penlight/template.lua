@@ -28,7 +28,9 @@
 -- Dependencies: `pl.utils`
 -- @module pl.template
 
-local utils = require 'pl.utils'
+local _M, crequire, brequire = require("newmodule")(...)
+
+local utils = brequire 'utils'
 
 
 local function parseHashLines(chunk,brackets,esc)

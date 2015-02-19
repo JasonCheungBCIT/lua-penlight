@@ -1,7 +1,9 @@
+local _M, crequire, brequire = require("newmodule")(...)
+
 --- Simple command-line parsing using human-readable specification.
 -- Supports GNU-style parameters.
 --
---      lapp = require 'pl.lapp'
+--      lapp = brequire 'lapp'
 --      local args = lapp [[
 --      Does some calculations
 --        -o,--offset (default 0.0)  Offset to add to scaled number

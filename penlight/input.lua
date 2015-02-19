@@ -1,3 +1,5 @@
+local _M, crequire, brequire = require("newmodule")(...)
+
 --- Iterators for extracting words or numbers from an input source.
 --
 --    require 'pl'
@@ -13,7 +15,7 @@
 local strfind = string.find
 local strsub = string.sub
 local strmatch = string.match
-local utils = require 'pl.utils'
+local utils = brequire 'utils'
 local unpack = utils.unpack
 local pairs,type,tonumber = pairs,type,tonumber
 local patterns = utils.patterns

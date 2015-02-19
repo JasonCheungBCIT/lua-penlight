@@ -4,13 +4,15 @@
 -- Dependencies: `pl.utils`, `pl.tablex`, `pl.types`
 -- @module pl.array2d
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local type,tonumber,assert,tostring,io,ipairs,string,table =
     _G.type,_G.tonumber,_G.assert,_G.tostring,_G.io,_G.ipairs,_G.string,_G.table
 local setmetatable,getmetatable = setmetatable,getmetatable
 
-local tablex = require 'pl.tablex'
-local utils = require 'pl.utils'
-local types = require 'pl.types'
+local tablex = brequire 'tablex'
+local utils = brequire 'utils'
+local types = brequire 'types'
 local imap,tmap,reduce,keys,tmap2,tset,index_by = tablex.imap,tablex.map,tablex.reduce,tablex.keys,tablex.map2,tablex.set,tablex.index_by
 local remove = table.remove
 local splitv,fprintf,assert_arg = utils.splitv,utils.fprintf,utils.assert_arg

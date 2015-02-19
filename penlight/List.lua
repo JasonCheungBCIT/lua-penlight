@@ -18,13 +18,15 @@
 -- @classmod pl.List
 -- @pragma nostrip
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local tinsert,tremove,concat,tsort = table.insert,table.remove,table.concat,table.sort
 local setmetatable, getmetatable,type,tostring,assert,string,next = setmetatable,getmetatable,type,tostring,assert,string,next
-local tablex = require 'pl.tablex'
+local tablex = brequire 'tablex'
 local filter,imap,imap2,reduce,transform,tremovevalues = tablex.filter,tablex.imap,tablex.imap2,tablex.reduce,tablex.transform,tablex.removevalues
 local tsub = tablex.sub
-local utils = require 'pl.utils'
-local class = require 'pl.class'
+local utils = brequire 'utils'
+local class = brequire 'class'
 
 local array_tostring,split,assert_arg,function_arg = utils.array_tostring,utils.split,utils.assert_arg,utils.function_arg
 local normalize_slice = tablex._normalize_slice

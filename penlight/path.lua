@@ -5,6 +5,8 @@
 -- Dependencies: `pl.utils`, `lfs`
 -- @module pl.path
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 -- imports and locals
 local _G = _G
 local sub = string.sub
@@ -15,7 +17,7 @@ local package = package
 local io = io
 local append = table.insert
 local ipairs = ipairs
-local utils = require 'pl.utils'
+local utils = brequire 'utils'
 local assert_arg,assert_string,raise = utils.assert_arg,utils.assert_string,utils.raise
 
 local attrib

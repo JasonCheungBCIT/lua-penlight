@@ -4,8 +4,11 @@
 --
 -- Dependencies: `pl.utils`, `pl.types`
 -- @module pl.tablex
-local utils = require ('pl.utils')
-local types = require ('pl.types')
+
+local _M, crequire, brequire = require("newmodule")(...)
+
+local utils = brequire 'utils'
+local types = brequire 'types'
 local getmetatable,setmetatable,require = getmetatable,setmetatable,require
 local tsort,append,remove = table.sort,table.insert,table.remove
 local min,max = math.min,math.max

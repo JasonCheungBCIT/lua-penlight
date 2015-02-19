@@ -28,6 +28,8 @@
 --
 -- @module pl.config
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local type,tonumber,ipairs,io, table = _G.type,_G.tonumber,_G.ipairs,_G.io,_G.table
 
 local function split(s,re)

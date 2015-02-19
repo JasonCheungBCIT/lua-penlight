@@ -4,10 +4,12 @@
 -- Soft Dependencies: `alien`, `ffi` (either are used on Windows for copying/moving files)
 -- @module pl.dir
 
-local utils = require 'pl.utils'
-local path = require 'pl.path'
+local _M, crequire, brequire = require("newmodule")(...)
+
+local utils = brequire 'utils'
+local path = brequire 'path'
 local is_windows = path.is_windows
-local tablex = require 'pl.tablex'
+local tablex = brequire 'tablex'
 local ldir = path.dir
 local chdir = path.chdir
 local mkdir = path.mkdir

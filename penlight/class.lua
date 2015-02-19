@@ -10,6 +10,8 @@
 -- See the Guide for further @{01-introduction.md.Simplifying_Object_Oriented_Programming_in_Lua|discussion}
 -- @module pl.class
 
+local _M, crequire, brequire = require("newmodule")(...)
+
 local error, getmetatable, io, pairs, rawget, rawset, setmetatable, tostring, type =
     _G.error, _G.getmetatable, _G.io, _G.pairs, _G.rawget, _G.rawset, _G.setmetatable, _G.tostring, _G.type
 local compat
@@ -207,7 +209,7 @@ class = setmetatable({},{
             io.stderr:write('require("pl.class").class is deprecated. Use require("pl.class")\n')
             return class
         end
-        compat = compat or require 'pl.compat'
+        compat = compat or brequire 'compat'
         local env = compat.getfenv(2)
         return function(...)
             local c = _class(...)
